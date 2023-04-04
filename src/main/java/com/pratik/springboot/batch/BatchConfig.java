@@ -26,7 +26,7 @@ public class BatchConfig {
 
     public Step step() {
         StepBuilder stepBuilder = new StepBuilder("step-1");
-        return stepBuilder.chunk(1).reader(reader()).processor(processor()).writer(writer()).build();
+        return stepBuilder.<String, String>chunk(1).reader(reader()).processor(processor()).writer(writer()).build();
     }
 
     @Bean
